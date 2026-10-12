@@ -1,0 +1,20 @@
+Storefront redesign changelog
+
+- index.html
+  - Set the document language to Greek.
+  - Added a page description and theme color; updated the page title.
+- src/App.jsx
+  - Replaced the bare product list with a branded storefront header, navigation,
+    promotional hero, shopping-benefits strip, and footer.
+  - Added a working product search field and responsive-friendly navigation.
+- src/index.css
+  - Replaced the starter theme with the storefront palette, typography, layout,
+    interactive states, and responsive desktop/mobile styles.
+- src/components/ProductList.jsx
+  - Added the curated-products heading, result count, responsive grid, and
+    product search filtering with an empty-results state.
+- src/components/Product.jsx
+  - Restyled product markup as an accessible product card with descriptive
+    image text and formatted prices.
+- src/css/Product.css
+  - Added product image, hover, title, description, and price-card styling.
