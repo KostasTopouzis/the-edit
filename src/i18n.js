@@ -70,15 +70,15 @@ export const translations = {
     footerTagline: 'Good finds, made for everyday.',
     backToTop: 'BACK TO TOP ↑',
   },
-}
+};
 
-export const defaultLanguage = 'el'
+export const defaultLanguage = 'el';
 
 export function getLanguageFromUrl() {
-  const language = new URLSearchParams(window.location.search).get('lang')
-  return Object.hasOwn(translations, language) ? language : defaultLanguage
+  const language = new URLSearchParams(window.location.search).get('lang');
+  return Object.hasOwn(translations, language) ? language : defaultLanguage;
 }
 
 export function languageHref(language) {
-  return language === defaultLanguage ? './' : `?lang=${language}`
+  return language === defaultLanguage ? './' : `?lang=${language}`;
 }

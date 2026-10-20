@@ -1,19 +1,19 @@
-import { productSeeds } from '../Seed.js'
-import { translations } from '../i18n.js'
-import Product from './Product.jsx'
+import { productSeeds } from '../Seed.js';
+import { translations } from '../i18n.js';
+import Product from './Product.jsx';
 
 // Case- and accent-insensitive, so "μασκαρα" matches "Μάσκαρα".
 function normalizeForSearch(text, locale) {
-  return text.toLocaleLowerCase(locale).normalize('NFD').replace(/\p{M}/gu, '')
+  return text.toLocaleLowerCase(locale).normalize('NFD').replace(/\p{M}/gu, '');
 }
 
 function ProductList({ language, searchTerm }) {
-  const t = translations[language]
-  const normalizedSearch = normalizeForSearch(searchTerm.trim(), t.locale)
+  const t = translations[language];
+  const normalizedSearch = normalizeForSearch(searchTerm.trim(), t.locale);
   const filteredProducts = productSeeds.filter((product) =>
     normalizeForSearch(`${product.productName} ${product.description[language]}`, t.locale)
       .includes(normalizedSearch),
-  )
+  );
 
   return (
     <section aria-labelledby="products-title" className="product-section" id="products">
@@ -39,7 +39,7 @@ function ProductList({ language, searchTerm }) {
         <p className="empty-state">{t.emptyState(searchTerm)}</p>
       )}
     </section>
-  )
+  );
 }
 
-export default ProductList
+export default ProductList;

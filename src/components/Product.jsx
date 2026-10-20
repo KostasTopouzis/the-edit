@@ -1,14 +1,14 @@
-import { translations } from '../i18n.js'
-import '../css/Product.css'
+import { translations } from '../i18n.js';
+import '../css/Product.css';
 
-const currencyCodes = { $: 'USD', '€': 'EUR' }
+const currencyCodes = { $: 'USD', '€': 'EUR' };
 
 function Product({ imgSrc, productName, description, price, currency, language }) {
-  const t = translations[language]
+  const t = translations[language];
   const formattedPrice = new Intl.NumberFormat(t.locale, {
     style: 'currency',
     currency: currencyCodes[currency] ?? currency,
-  }).format(price)
+  }).format(price);
 
   return (
     <article className="product-card">
@@ -24,7 +24,7 @@ function Product({ imgSrc, productName, description, price, currency, language }
         <span className="product-price">{formattedPrice}</span>
       </div>
     </article>
-  )
+  );
 }
 
-export default Product
+export default Product;

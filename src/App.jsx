@@ -1,9 +1,9 @@
-import { useEffect, useState } from 'react'
-import { productSeeds } from './Seed.js'
-import ProductList from './components/ProductList.jsx'
-import { getLanguageFromUrl, languageHref, translations } from './i18n.js'
+import { useEffect, useState } from 'react';
+import { productSeeds } from './Seed.js';
+import ProductList from './components/ProductList.jsx';
+import { getLanguageFromUrl, languageHref, translations } from './i18n.js';
 
-const benefitIcons = ['↗', '↺', '▤', '⌂']
+const benefitIcons = ['↗', '↺', '▤', '⌂'];
 
 // Font faces in use. Google Fonts splits them per script, so the Greek or Latin
 // files would otherwise only download on the first switch and swap in visibly.
@@ -14,41 +14,41 @@ const fontFaces = [
   '500 1em "Commissioner"',
   '600 1em "Commissioner"',
   '700 1em "Commissioner"',
-]
+];
 
 function App() {
-  const [searchTerm, setSearchTerm] = useState('')
-  const [language, setLanguage] = useState(getLanguageFromUrl)
-  const t = translations[language]
-  const featuredProducts = [productSeeds[11], productSeeds[7]]
+  const [searchTerm, setSearchTerm] = useState('');
+  const [language, setLanguage] = useState(getLanguageFromUrl);
+  const t = translations[language];
+  const featuredProducts = [productSeeds[11], productSeeds[7]];
 
   useEffect(() => {
     for (const face of fontFaces) {
-      document.fonts?.load(face, 'Αα Aa').catch(() => {})
+      document.fonts?.load(face, 'Αα Aa').catch(() => {});
     }
 
-    const handlePopState = () => setLanguage(getLanguageFromUrl())
-    window.addEventListener('popstate', handlePopState)
-    return () => window.removeEventListener('popstate', handlePopState)
-  }, [])
+    const handlePopState = () => setLanguage(getLanguageFromUrl());
+    window.addEventListener('popstate', handlePopState);
+    return () => window.removeEventListener('popstate', handlePopState);
+  }, []);
 
   // Swap the copy in place instead of reloading, so the page keeps its scroll
   // position. Modified clicks still open the other version in a new tab.
   function switchLanguage(event, nextLanguage) {
-    if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return
-    event.preventDefault()
-    if (nextLanguage === language) return
-    window.history.pushState(null, '', languageHref(nextLanguage))
-    setLanguage(nextLanguage)
+    if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+    event.preventDefault();
+    if (nextLanguage === language) return;
+    window.history.pushState(null, '', languageHref(nextLanguage));
+    setLanguage(nextLanguage);
   }
 
   useEffect(() => {
-    document.documentElement.lang = language
-    document.title = t.documentTitle
+    document.documentElement.lang = language;
+    document.title = t.documentTitle;
     document
       .querySelector('meta[name="description"]')
-      ?.setAttribute('content', t.documentDescription)
-  }, [language, t])
+      ?.setAttribute('content', t.documentDescription);
+  }, [language, t]);
 
   return (
     <div className="storefront" id="top">
@@ -163,7 +163,7 @@ function App() {
         <a href="#top">{t.backToTop}</a>
       </footer>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;

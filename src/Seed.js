@@ -1,23 +1,23 @@
-import productImage01 from './assets/product-01.webp'
-import productImage02 from './assets/product-02.webp'
-import productImage03 from './assets/product-03.webp'
-import productImage04 from './assets/product-04.webp'
-import productImage05 from './assets/product-05.webp'
-import productImage06 from './assets/product-06.webp'
-import productImage07 from './assets/product-07.webp'
-import productImage08 from './assets/product-08.webp'
-import productImage09 from './assets/product-09.webp'
-import productImage10 from './assets/product-10.webp'
-import productImage11 from './assets/product-11.webp'
-import productImage12 from './assets/product-12.webp'
-import productImage13 from './assets/product-13.webp'
-import productImage14 from './assets/product-14.webp'
-import productImage15 from './assets/product-15.webp'
-import productImage16 from './assets/product-16.webp'
-import productImage17 from './assets/product-17.webp'
-import productImage18 from './assets/product-18.webp'
-import productImage19 from './assets/product-19.webp'
-import productImage20 from './assets/product-20.webp'
+import productImage01 from './assets/product-01.webp';
+import productImage02 from './assets/product-02.webp';
+import productImage03 from './assets/product-03.webp';
+import productImage04 from './assets/product-04.webp';
+import productImage05 from './assets/product-05.webp';
+import productImage06 from './assets/product-06.webp';
+import productImage07 from './assets/product-07.webp';
+import productImage08 from './assets/product-08.webp';
+import productImage09 from './assets/product-09.webp';
+import productImage10 from './assets/product-10.webp';
+import productImage11 from './assets/product-11.webp';
+import productImage12 from './assets/product-12.webp';
+import productImage13 from './assets/product-13.webp';
+import productImage14 from './assets/product-14.webp';
+import productImage15 from './assets/product-15.webp';
+import productImage16 from './assets/product-16.webp';
+import productImage17 from './assets/product-17.webp';
+import productImage18 from './assets/product-18.webp';
+import productImage19 from './assets/product-19.webp';
+import productImage20 from './assets/product-20.webp';
 
 export const productSeeds = [
   {
@@ -240,4 +240,4 @@ export const productSeeds = [
     price: 4.99,
     currency: '$',
   },
-]
+];
