@@ -7,7 +7,7 @@
 
 ## Changelog folder
 
-This folder contains .txt files. Each file is a changelog devoted to a specific project aspect (as you can infer from its title). After each git commit update the corresponding files with a synopsis of the newest changes.
+This folder contains .txt files. Each file is a changelog devoted to a specific project aspect (as you can infer from its title). Before each git commit update ONLY the log most fitting to the nature of the changes with a synopsis of the newest changes.
 
 Format:
 
