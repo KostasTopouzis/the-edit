@@ -16,5 +16,7 @@ vx.x.x: entry title | current timestamp
 
 - filename: short description of changes.
 - filename2: etc.
-...
+... 
 ```
+
+If the version number has changed, update it in `package-lock.json` and `package.json` as well, and remind me to update the `README.md`.
