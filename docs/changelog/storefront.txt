@@ -42,7 +42,7 @@ v0.2.0: Atelier restyling changelog
   - Switched product colors to design tokens.
   - Set prices in the serif display face and outlined the image action label.
 
-v0.2.0: Separate Greek and English storefront versions | 2026-10-20 21:40
+v0.3.0: Separate Greek and English storefront versions | 2026-10-20 21:40
 
 - src/i18n.js: new Greek and English interface copy, with language detection
   from the ?lang URL parameter (Greek by default).
