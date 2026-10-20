@@ -2,7 +2,7 @@ import { productSeeds } from '../Seed.js';
 import { translations } from '../i18n.js';
 import Product from './Product.jsx';
 
-// Case- and accent-insensitive, so "μασκαρα" matches "Μάσκαρα".
+// Case- and accent-insensitive, so "γλαστρα" matches "Γλάστρα".
 function normalizeForSearch(text, locale) {
   return text.toLocaleLowerCase(locale).normalize('NFD').replace(/\p{M}/gu, '');
 }
@@ -11,7 +11,7 @@ function ProductList({ language, searchTerm }) {
   const t = translations[language];
   const normalizedSearch = normalizeForSearch(searchTerm.trim(), t.locale);
   const filteredProducts = productSeeds.filter((product) =>
-    normalizeForSearch(`${product.productName} ${product.description[language]}`, t.locale)
+    normalizeForSearch(`${product.productName[language]} ${product.description[language]}`, t.locale)
       .includes(normalizedSearch),
   );
 
@@ -30,6 +30,7 @@ function ProductList({ language, searchTerm }) {
             <Product
               key={`product-${product.productId}`}
               {...product}
+              productName={product.productName[language]}
               description={product.description[language]}
               language={language}
             />

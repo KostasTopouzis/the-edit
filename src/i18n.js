@@ -22,7 +22,7 @@ export const translations = {
     heroSticker: ['GOOD', 'THINGS', 'INSIDE'],
     benefitsLabel: 'Πλεονεκτήματα αγορών',
     benefits: [
-      'ΔΩΡΕΑΝ ΑΠΟΣΤΟΛΗ ΑΝΩ ΤΩΝ 75 $',
+      'ΔΩΡΕΑΝ ΑΠΟΣΤΟΛΗ ΑΝΩ ΤΩΝ 75 €',
       'ΕΥΚΟΛΕΣ ΕΠΙΣΤΡΟΦΕΣ',
       'ΑΣΦΑΛΕΙΣ ΠΛΗΡΩΜΕΣ',
       'ΠΑΡΑΔΟΣΗ ΜΕ ΦΡΟΝΤΙΔΑ',
@@ -56,7 +56,7 @@ export const translations = {
     heroSticker: ['GOOD', 'THINGS', 'INSIDE'],
     benefitsLabel: 'Shopping benefits',
     benefits: [
-      'FREE SHIPPING OVER $75',
+      'FREE SHIPPING OVER €75',
       'EASY RETURNS',
       'SECURE PAYMENT',
       'DELIVERED WITH CARE',

@@ -56,3 +56,18 @@ v0.3.0: Separate Greek and English storefront versions | 2026-10-20 21:40
 - src/index.css: styled the GR/EN switch as links with an active state.
 - index.html: Greek default title and description.
 
+v0.4.0: Home goods catalogue in euros | 2026-10-20 23:41
+
+- src/Seed.js: replaced the mixed beauty, furniture and grocery catalogue
+  with 20 everyday home and kitchen products in wood, glass, ceramic and
+  steel; product names and descriptions in Greek and English; prices in
+  euros.
+- src/assets/products/: new DummyJSON placeholder renders for the catalogue,
+  replacing the old product-01 to product-20 images.
+- src/components/ProductList.jsx: product names and search follow the
+  active language.
+- src/i18n.js: free shipping threshold shown in euros.
+- .claude/skills/storefront-designer/SKILL.md: read the brand character
+  brief before designing.
+- docs/ai/design-directions/brand-character.md: new brand character brief.
+
