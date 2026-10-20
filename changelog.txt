@@ -1,3 +1,7 @@
+# The Edit E-Shop changelog
+
+v0.1.0: Initial storefront version
+
 Storefront redesign changelog
 
 - index.html
@@ -18,3 +22,4 @@ Storefront redesign changelog
     image text and formatted prices.
 - src/css/Product.css
   - Added product image, hover, title, description, and price-card styling.
+
