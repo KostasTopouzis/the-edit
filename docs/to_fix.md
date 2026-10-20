@@ -1,1 +1,2 @@
-- Product description remains in English even though the language chosen is Greek.
+- Settle on the exact wording of the storefront texts.
+- Implement a language choice implementation using path segments (/el-gr, /en) rather than the current query-parameter based mechanism (?lang=en).

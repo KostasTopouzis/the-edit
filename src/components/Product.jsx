@@ -1,14 +1,20 @@
+import { translations } from '../i18n.js'
 import '../css/Product.css'
 
-function Product({ imgSrc, productName, description, price, currency }) {
-  const formattedPrice =
-    currency === '$' ? `${currency}${price.toFixed(2)}` : `${price.toFixed(2)} ${currency}`
+const currencyCodes = { $: 'USD', '€': 'EUR' }
+
+function Product({ imgSrc, productName, description, price, currency, language }) {
+  const t = translations[language]
+  const formattedPrice = new Intl.NumberFormat(t.locale, {
+    style: 'currency',
+    currency: currencyCodes[currency] ?? currency,
+  }).format(price)
 
   return (
     <article className="product-card">
-      <a aria-label={`View ${productName}`} className="product-image" href="#products">
+      <a aria-label={t.viewProduct(productName)} className="product-image" href="#products">
         <img alt={productName} loading="lazy" src={imgSrc} />
-        <span className="product-image-action">DISCOVER</span>
+        <span className="product-image-action">{t.productAction}</span>
       </a>
       <div className="product-info">
         <div>

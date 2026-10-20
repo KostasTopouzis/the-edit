@@ -11,6 +11,9 @@ Use the storefront-designer skill to redesign my product listing page. Choose a 
 ### Refine an existing design
 Use the storefront-designer skill to improve the visual hierarchy, typography, product imagery, and spacing of my product detail page. Make it feel more premium and editorial without changing its business logic.
 
+### Create separate English and Greek versions
+Make English and Greek appear on separate versions of the page, not mixed in the same one. Translate expressions where necessary except for e-shop title, subtitle, product names (but translate the product's description). Leave untranslated terms like 'brand', 'outlet', etc. that are established in modern Greek commerce parlance.
+
 
 ## Execute `.md` prompts
 

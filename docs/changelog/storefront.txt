@@ -1,0 +1,58 @@
+# The Edit E-Shop changelog
+
+## Storefront redesign changelog
+
+v0.1.0: Initial storefront version
+
+- index.html
+  - Set the document language to Greek.
+  - Added a page description and theme color; updated the page title.
+- src/App.jsx
+  - Replaced the bare product list with a branded storefront header, navigation,
+    promotional hero, shopping-benefits strip, and footer.
+  - Added a working product search field and responsive-friendly navigation.
+- src/index.css
+  - Replaced the starter theme with the storefront palette, typography, layout,
+    interactive states, and responsive desktop/mobile styles.
+- src/components/ProductList.jsx
+  - Added the curated-products heading, result count, responsive grid, and
+    product search filtering with an empty-results state.
+- src/components/Product.jsx
+  - Restyled product markup as an accessible product card with descriptive
+    image text and formatted prices.
+- src/css/Product.css
+  - Added product image, hover, title, description, and price-card styling.
+
+v0.2.0: Atelier restyling changelog
+
+- index.html
+  - Loaded the Noto Serif Display and Commissioner fonts, both with Greek
+    character support.
+  - Changed the theme color to the new ivory background.
+- src/App.jsx
+  - Changed the shop subtitle from "THE SHOPPING DESTINATION" to
+    "A HOUSE OF CONSIDERED GOODS".
+- src/index.css
+  - Replaced hardcoded colors with design tokens.
+  - Restyled the storefront in the Atelier direction: ivory, espresso, oxblood
+    and brass palette, serif display type, and hairline rules.
+  - Added an arched hero image frame, a ringed hero badge, and a dark footer.
+  - Removed the DM Sans and Manrope fonts, which lacked Greek characters.
+- src/css/Product.css
+  - Switched product colors to design tokens.
+  - Set prices in the serif display face and outlined the image action label.
+
+v0.2.0: Separate Greek and English storefront versions | 2026-10-20 21:40
+
+- src/i18n.js: new Greek and English interface copy, with language detection
+  from the ?lang URL parameter (Greek by default).
+- src/App.jsx: rendered all copy from the active language; the GR/EN switch
+  changes language in place without a reload, and preloads both scripts'
+  font subsets to avoid a flicker.
+- src/Seed.js: added Greek translations of every product description.
+- src/components/ProductList.jsx: localized headings and counts; search is
+  case- and accent-insensitive in the active language.
+- src/components/Product.jsx: localized labels and locale-aware prices.
+- src/index.css: styled the GR/EN switch as links with an active state.
+- index.html: Greek default title and description.
+
