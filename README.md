@@ -12,7 +12,7 @@ There are separate Greek and English versions. Greek is the default, and the Eng
 
 ## Screenshot
 
-![The Edit storefront](path/to/screenshot.png)
+![The Edit storefront](/public/storefront_hero.png)
 
 ## New Features (v0.4.0)
 
