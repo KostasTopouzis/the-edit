@@ -1,4 +1,4 @@
-# The Edit v0.5.0
+# The Edit v0.5.1
 
 This project is intended as a portfolio piece demonstrating:
 - overall full-stack web development capabilities
@@ -19,13 +19,14 @@ There are separate Greek and English versions. Greek is the default, and the Eng
 
 ![The Edit storefront](/public/storefront_hero.png)
 
-## New Features (v0.5.0)
+## New Features (v0.5.1)
 
 - Migrated from Vite to Next.js with the App Router, in preparation for the backend and database work.
 - Rewrote the codebase in TypeScript, with typed translations, product data and component props.
 - The server reads the chosen language from the URL, so the English version and its page title load in English from the first render.
 - Product and hero images are served by Next.js in sizes suited to each screen.
 - Fonts are served with the site and preloaded in both Greek and Latin, so switching language never shows a font swap.
+- Added a GitHub Actions workflow (`ci.yml`) for automated lint and build tests upon a pull requests into main and on pushes to main.
 
 ## Tech Stack
 
@@ -63,6 +64,17 @@ npm run dev
 ```
 
 Then open [http://localhost:3000](http://localhost:3000) in your browser.
+
+## Development Workflow
+
+Changes are developed on a feature branch and merged into `main` through a pull request, as in a team setting, even though this is a solo project. The reason for this is that I wish to demonstrate my knowledge of professional collaborative practices and CI/CD workflows and also to make use of GitHub Actions automated checks.
+
+1. Create a feature branch (for example `feat/footer`) and push.
+2. Open a pull request into `main` describing what changed and why.
+3. A GitHub Actions workflow runs `npm run lint` and `npm run build`, and Vercel builds a preview deployment of the branch.
+4. Once the checks pass and I have reviewed the diff, the pull request is merged and Vercel deploys `main` to production.
+
+NOTE: I only follow this workflow for major changes. For smaller updates, I do not use PRs since they would create unnessecary overhead for a solo project.
 
 ## Future Goals
 
