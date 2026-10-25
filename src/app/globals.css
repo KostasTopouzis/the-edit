@@ -23,8 +23,8 @@
   --hero-ink: #f6f1e9;
   --hero-ink-soft: rgb(246 241 233 / 72%);
   --brass: #b8955f;
-  --display: 'Noto Serif Display', Georgia, serif;
-  --body-font: 'Commissioner', Arial, sans-serif;
+  --display: var(--font-display), Georgia, serif;
+  --body-font: var(--font-body), Arial, sans-serif;
 }
 
 * {

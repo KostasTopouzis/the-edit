@@ -1,13 +1,18 @@
-import { productSeeds } from '../Seed.js';
-import { translations } from '../i18n.js';
-import Product from './Product.jsx';
+import { productSeeds } from '../Seed';
+import { type Language, translations } from '../i18n';
+import Product from './Product';
 
 // Case- and accent-insensitive, so "γλαστρα" matches "Γλάστρα".
-function normalizeForSearch(text, locale) {
+function normalizeForSearch(text: string, locale: string) {
   return text.toLocaleLowerCase(locale).normalize('NFD').replace(/\p{M}/gu, '');
 }
 
-function ProductList({ language, searchTerm }) {
+type ProductListProps = {
+  language: Language;
+  searchTerm: string;
+};
+
+function ProductList({ language, searchTerm }: ProductListProps) {
   const t = translations[language];
   const normalizedSearch = normalizeForSearch(searchTerm.trim(), t.locale);
   const filteredProducts = productSeeds.filter((product) =>
