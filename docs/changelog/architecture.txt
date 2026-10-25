@@ -1,0 +1,41 @@
+# The Edit E-Shop changelog
+
+## Architecture changelog
+
+v0.5.1: Add GitHub Actions CI and pull request workflow | 2026-10-25 23:03
+
+- .github/workflows/ci.yml: new workflow that runs npm ci, npm run lint
+  and npm run build on Node 24 for pull requests into main and pushes
+  to main; superseded runs on the same ref are cancelled.
+- README.md: new Development Workflow section describing the feature
+  branch, pull request, CI check and Vercel preview flow.
+- package.json, package-lock.json: version bumped to 0.5.1.
+
+v0.5.0: Migrate from Vite to Next.js with TypeScript | 2026-10-25 22:03
+
+- package.json, package-lock.json: replaced Vite and its React/ESLint
+  plugins with Next.js 16, TypeScript 6, @types/node and
+  eslint-config-next; scripts now run next dev, build and start.
+- tsconfig.json, next.config.ts: new TypeScript and Next.js config.
+- eslint.config.js: Next.js core web vitals and TypeScript rules; kept
+  the semicolon rule.
+- .gitignore: ignores .next, out, next-env.d.ts and tsbuildinfo files.
+- src/app/layout.tsx: new root layout replacing index.html; loads the
+  Commissioner and Noto Serif Display fonts (Latin and Greek, both
+  preloaded) through next/font, and sets the default metadata.
+- src/app/page.tsx: new home page that reads ?lang on the server, so
+  the first render and page title are already in the right language.
+- src/app/globals.css: moved from src/index.css; font tokens now point
+  to the next/font variables.
+- src/components/Storefront.tsx: App.jsx as a typed client component
+  that starts from the server language; the manual font preloading is
+  gone, and the hero images use next/image.
+- src/components/Product.tsx, src/components/ProductList.tsx: typed
+  props; product images use next/image with responsive sizes.
+- src/i18n.ts, src/Seed.ts: typed translations, language helpers and
+  product seeds.
+- index.html, vite.config.js, src/main.jsx: removed.
+- README.md: v0.5.0 features, Next.js and TypeScript badges, and font
+  licence wording.
+- docs/progress.md: marked the migration done; the database server is
+  next.

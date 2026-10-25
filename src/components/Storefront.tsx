@@ -1,32 +1,24 @@
-import { useEffect, useState } from 'react';
-import { productSeeds } from './Seed.js';
-import ProductList from './components/ProductList.jsx';
-import { getLanguageFromUrl, languageHref, translations } from './i18n.js';
+'use client';
+
+import Image from 'next/image';
+import { type MouseEvent, useEffect, useState } from 'react';
+import { productSeeds } from '../Seed';
+import ProductList from './ProductList';
+import { type Language, getLanguageFromUrl, languageHref, translations } from '../i18n';
 
 const benefitIcons = ['↗', '↺', '▤', '⌂'];
 
-// Font faces in use. Google Fonts splits them per script, so the Greek or Latin
-// files would otherwise only download on the first switch and swap in visibly.
-const fontFaces = [
-  '300 1em "Noto Serif Display"',
-  'italic 300 1em "Noto Serif Display"',
-  '400 1em "Commissioner"',
-  '500 1em "Commissioner"',
-  '600 1em "Commissioner"',
-  '700 1em "Commissioner"',
-];
+type StorefrontProps = {
+  initialLanguage: Language;
+};
 
-function App() {
+function Storefront({ initialLanguage }: StorefrontProps) {
   const [searchTerm, setSearchTerm] = useState('');
-  const [language, setLanguage] = useState(getLanguageFromUrl);
+  const [language, setLanguage] = useState(initialLanguage);
   const t = translations[language];
   const featuredProducts = [productSeeds[11], productSeeds[7]];
 
   useEffect(() => {
-    for (const face of fontFaces) {
-      document.fonts?.load(face, 'Αα Aa').catch(() => {});
-    }
-
     const handlePopState = () => setLanguage(getLanguageFromUrl());
     window.addEventListener('popstate', handlePopState);
     return () => window.removeEventListener('popstate', handlePopState);
@@ -34,7 +26,7 @@ function App() {
 
   // Swap the copy in place instead of reloading, so the page keeps its scroll
   // position. Modified clicks still open the other version in a new tab.
-  function switchLanguage(event, nextLanguage) {
+  function switchLanguage(event: MouseEvent<HTMLAnchorElement>, nextLanguage: Language) {
     if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
     event.preventDefault();
     if (nextLanguage === language) return;
@@ -135,10 +127,10 @@ function App() {
 
           <div aria-hidden="true" className="hero-visual">
             <div className="hero-image hero-image-main">
-              <img alt="" src={featuredProducts[0].imgSrc} />
+              <Image alt="" preload sizes="(max-width: 540px) 80vw, 390px" src={featuredProducts[0].imgSrc} />
             </div>
             <div className="hero-image hero-image-small">
-              <img alt="" src={featuredProducts[1].imgSrc} />
+              <Image alt="" sizes="(max-width: 540px) 40vw, 180px" src={featuredProducts[1].imgSrc} />
             </div>
             <div className="hero-sticker">
               {t.heroSticker[0]}<br />{t.heroSticker[1]}<br /><span>{t.heroSticker[2]}</span>
@@ -166,4 +158,4 @@ function App() {
   );
 }
 
-export default App;
+export default Storefront;

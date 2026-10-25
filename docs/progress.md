@@ -1,7 +1,7 @@
 1. Created initial storefront version
 2. Create remote repo in GitHub
-3. NEXT: Migrate the project to Next.js with TypeScript, before it gets more complicated.
-4. Add server for connecting with an existing Prisma PostgreSQL database. I will be using an ORM for connecting.
+3. Migrate the project to Next.js with TypeScript, before it gets more complicated.
+4. NEXT: Add server for connecting with an existing Prisma PostgreSQL database. I will be using an ORM for connecting.
 5. Improve storefront page by adding image feature sections and a more professional and informative footer.
 6. Decide on rendering model: BSR, SSR, or Static
 7. Design the database schema and data types. You don't have to implement it yet.

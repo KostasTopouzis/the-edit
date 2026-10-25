@@ -1,3 +1,5 @@
+import type { StaticImageData } from 'next/image';
+import type { Language } from './i18n';
 import imgBeechwoodChoppingBoard from './assets/products/beechwood-chopping-board.webp';
 import imgClearTumblerGlass from './assets/products/clear-tumbler-glass.webp';
 import imgGlassSpiceCarousel from './assets/products/glass-spice-carousel.webp';
@@ -19,10 +21,19 @@ import imgMetalPlantStand from './assets/products/metal-plant-stand.webp';
 import imgTableSpoonsSetOf4 from './assets/products/table-spoons-set-of-4.webp';
 import imgDinnerForksSetOf4 from './assets/products/dinner-forks-set-of-4.webp';
 
+export type ProductSeed = {
+  productId: number;
+  imgSrc: StaticImageData;
+  productName: Record<Language, string>;
+  description: Record<Language, string>;
+  price: number;
+  currency: string;
+};
+
 // Mock catalogue for the storefront: names, descriptions and prices are
 // placeholders for layout and copy, not real inventory or pricing data.
 // Images are DummyJSON (dummyjson.com) placeholder product renders.
-export const productSeeds = [
+export const productSeeds: ProductSeed[] = [
   {
     productId: 1,
     imgSrc: imgBeechwoodChoppingBoard,
