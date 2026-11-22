@@ -2,6 +2,15 @@
 
 ## Architecture changelog
 
+v0.5.2: Upgrade Next.js 16.4.3 to 16.4.6 for security advisory | 2026-11-22
+
+- package.json, package-lock.json: next and eslint-config-next bumped
+  to 16.4.6 to fix a published security advisory; version bumped to
+  0.5.2.
+- next.config.ts: set experimental.agentUpgrade to "security" so coding
+  agents are nudged about future security upgrades.
+- README.md: title and New Features section updated for v0.5.2.
+
 v0.5.1: Add GitHub Actions CI and pull request workflow | 2026-10-25 23:03
 
 - .github/workflows/ci.yml: new workflow that runs npm ci, npm run lint

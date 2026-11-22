@@ -1,4 +1,4 @@
-# The Edit v0.5.1
+# The Edit v0.5.2
 
 This project is intended as a portfolio piece demonstrating:
 - overall full-stack web development capabilities
@@ -19,14 +19,10 @@ There are separate Greek and English versions. Greek is the default, and the Eng
 
 ![The Edit storefront](/public/storefront_hero.png)
 
-## New Features (v0.5.1)
+## New Features (v0.5.2)
 
-- Migrated from Vite to Next.js with the App Router, in preparation for the backend and database work.
-- Rewrote the codebase in TypeScript, with typed translations, product data and component props.
-- The server reads the chosen language from the URL, so the English version and its page title load in English from the first render.
-- Product and hero images are served by Next.js in sizes suited to each screen.
-- Fonts are served with the site and preloaded in both Greek and Latin, so switching language never shows a font swap.
-- Added a GitHub Actions workflow (`ci.yml`) for automated lint and build tests upon a pull requests into main and on pushes to main.
+- Upgraded Next.js from 16.4.3 to 16.4.6 to fix a published security advisory.
+- Enabled the Next.js security upgrade notice (`experimental.agentUpgrade`), so coding agents working on the project are alerted to future security releases.
 
 ## Tech Stack
 
