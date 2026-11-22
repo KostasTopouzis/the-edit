@@ -2,6 +2,14 @@
 
 ## Architecture changelog
 
+v0.5.2: Fix minimatch audit warnings in lint tooling | 2026-11-22 21:25
+
+- package.json: eslint range raised to ^10.15.0, which depends on the
+  fixed minimatch 11 (GHSA-g3hv-75wg-m249).
+- package-lock.json: npm audit fix moved typescript-eslint to 8.73.0
+  and @eslint/config-array to 0.23.6, both on the fixed minimatch;
+  npm audit now reports 0 vulnerabilities.
+
 v0.5.2: Upgrade Next.js 16.4.3 to 16.4.6 for security advisory | 2026-11-22
 
 - package.json, package-lock.json: next and eslint-config-next bumped
