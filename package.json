@@ -1,7 +1,7 @@
 {
   "name": "the-edit",
   "private": true,
-  "version": "0.5.1",
+  "version": "0.5.2",
   "license": "MIT",
   "type": "module",
   "scripts": {
@@ -11,7 +11,7 @@
     "lint": "eslint ."
   },
   "dependencies": {
-    "next": "^16.4.3",
+    "next": "^16.4.6",
     "react": "^19.2.8",
     "react-dom": "^19.2.8"
   },
@@ -20,7 +20,7 @@
     "@types/react": "^19.2.18",
     "@types/react-dom": "^19.2.7",
     "eslint": "^10.10.0",
-    "eslint-config-next": "^16.4.3",
+    "eslint-config-next": "^16.4.6",
     "typescript": "^6.0.3"
   }
 }
